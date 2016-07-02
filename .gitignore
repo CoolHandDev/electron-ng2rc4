@@ -4,3 +4,6 @@ node_modules
 workspace.xml
 npm-debug.log
 client/app/lib/**
+/views/*.js
+/views/*.map
+!./main.js
