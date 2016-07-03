@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Project} from '../models/project';
 
 @Component({
     selector: 'form1',
@@ -6,5 +7,5 @@ import {Component} from '@angular/core';
 })
 
 export class form1Component {
-
+    projectModel = new Project('', '');
 }

@@ -1,13 +1,19 @@
 <form class="ui form">
     <div class="field">
-        <label>Project Name</label>
-        <input type="text" name="project-name" placeholder="Project Name">
+        <label for="project-name">Project Name</label>
+        <input type="text" id="project-name" name="name" placeholder="Project Name" [(ngModel)]="projectModel.name">
     </div>
     <div class="field">
-        <label>Project Type</label>
-        <input type="text" name="project-type" placeholder="Project Type">
+        <label for="project-type">Project Type</label>
+        <input type="text" id="project-type" name="type" placeholder="Project Type" [(ngModel)]="projectModel.type">
     </div>
-    <button class="ui primary button">
+    <button type="submit" class="ui primary button">
         Save
     </button>
+    <div>
+        Project name: {{projectModel.name}}
+    </div>
+    <div>
+        Project type: {{projectModel.type}}
+    </div>
 </form>
