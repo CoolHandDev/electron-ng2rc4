@@ -18,8 +18,8 @@ import {
 export class form1Component {
     projectForm = FormGroup;
     projectModel = new Project('', '');
-    name: AbstractControl;
-    type: AbstractControl;
+    /*name: AbstractControl;
+    type: AbstractControl;*/
 
     constructor(fb: FormBuilder) {
         this.projectForm = fb.group({
@@ -27,8 +27,9 @@ export class form1Component {
             'type': ['', Validators.required]
         });
 
+        /*
         this.name = this.projectForm.controls['name'];
-        this.type = this.projectForm.controls['type'];
+        this.type = this.projectForm.controls['type'];*/
     }
 
     onSubmit(form: any): void {
