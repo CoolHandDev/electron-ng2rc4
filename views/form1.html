@@ -1,14 +1,16 @@
 <!--<form class="ui form" #f="ngForm" (ngSubmit)="onSubmit(f.value)">-->
 <form class="ui form" [formGroup]="projectForm" (ngSubmit)="onSubmit(projectForm.value)">
-    <div class="field">
+    <div class="field" [class.error]="!projectForm.controls['name'].valid && projectForm.controls['name'].touched">
         <label for="name">Project Name</label>
         <input type="text" id="name" name="name"
                [formControl]="projectForm.controls['name']">
+        <div *ngIf="projectForm.controls['name'].hasError('required') && projectForm.controls['name'].touched" class="ui negative message">Project name is required.</div>
     </div>
-    <div class="field">
+    <div class="field" [class.error]="!projectForm.controls['type'].valid && projectForm.controls['type'].touched">
         <label for="type">Project Type</label>
         <input type="text" id="type" name="type"
-            [formControl]="projectForm.controls['type']">
+               [formControl]="projectForm.controls['type']">
+        <div *ngIf="projectForm.controls['type'].hasError('required') && projectForm.controls['type'].touched" class="ui negative message">Project type is required.</div>
     </div>
     <button type="submit" class="ui primary button">
         Save
