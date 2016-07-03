@@ -7,3 +7,4 @@ client/app/lib/**
 /views/*.js
 /views/*.map
 !./main.js
+semantic
