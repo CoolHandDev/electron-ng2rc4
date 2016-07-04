@@ -38,8 +38,13 @@ export class form1Component {
         console.log('The form value is', form);
         if (this.projectForm.valid) {
             console.log('form is valid');
+            ipcRenderer.send('save', this.projectModel);
         } else {
             console.log('form is not valid');
         }
+    }
+
+    openDevTools(event) {
+        ipcRenderer.send('openDevTools', event);
     }
 }
