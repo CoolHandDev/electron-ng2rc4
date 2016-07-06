@@ -11,7 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
     <script src="../semantic/dist/semantic.min.js"></script>
     <script>
-        const {ipcRenderer} = require('electron');
+        //const {ipcRenderer} = require('electron');
+        System.set('electron', System.newModule(require('electron')));
     </script>
 
     <script>
@@ -20,11 +21,16 @@
                 '@angular': '../node_modules/@angular',
                 'angular2-in-memory-web-api': '../node_modules/angular2-in-memory-web-api',
                 'rxjs': '../node_modules/rxjs',
+                //'electron': '../node_modules/electron-prebuilt'
             },
             packages: {
                 '/': {
                     defaultExtension: 'js'
                 },
+                /*'electron': {
+                    main: 'index.js',
+                    defaultExtension: 'js'
+                },*/
                 'rxjs': {
                     defaultExtension: 'js'
                 },

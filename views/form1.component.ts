@@ -8,14 +8,13 @@ import {
     Validators,
     AbstractControl
 } from '@angular/forms';
-
+import {ipcRenderer} from 'electron';
 
 @Component({
     selector: 'form1',
     templateUrl: './form1.html',
     directives: [FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES]
 })
-
 export class form1Component {
     projectForm = FormGroup;
     projectModel = new Project('', '');
