@@ -9,6 +9,7 @@ import {
     AbstractControl
 } from '@angular/forms';
 
+
 @Component({
     selector: 'form1',
     templateUrl: './form1.html',
@@ -46,5 +47,9 @@ export class form1Component {
 
     openDevTools(event) {
         ipcRenderer.send('openDevTools', event);
+    }
+
+    connectToMongoDB(event) {
+        ipcRenderer.send('connectToMongo');
     }
 }
