@@ -49,7 +49,11 @@ app.on('ready', function() {
     });
 
     ipcMain.on('openDevTools', function(event, arg) {
-        mainWindow.webContents.openDevTools();
+        if (mainWindow.isDevToolsOpened()) {
+            mainWindow.webContents.closeDevTools();
+        } else {
+            mainWindow.webContents.openDevTools();
+        }
     })
 
     ipcMain.on('connectToMongo', function(event, arg) {

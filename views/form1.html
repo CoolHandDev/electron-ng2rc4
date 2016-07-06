@@ -12,11 +12,11 @@
                [formControl]="projectForm.controls['type']">
         <div *ngIf="projectForm.controls['type'].hasError('required') && projectForm.controls['type'].touched" class="ui negative message">Project type is required.</div>
     </div>
-    <button type="submit" class="ui primary button">
+    <button type="submit" class="ui primary button" >
         Save
     </button>
-    <button class="ui button" (click)="openDevTools($event)">Toggle developer tool</button>
-    <button class="ui button" (click)="connectToMongoDB($event)">Connect to MongoDB</button>
+    <button class="ui button" type="button" (click)="openDevTools($event)">Toggle developer tool</button>
+    <button class="ui button" type="button" (click)="connectToMongoDB($event)">Connect to MongoDB</button>
     <div>
         Project name: {{projectModel.name}}
     </div>
