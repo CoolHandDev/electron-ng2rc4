@@ -9,3 +9,5 @@ client/app/lib/**
 !./main.js
 semantic
 /electron-ng2rc4-win32-x64
+typings
+

@@ -8,5 +8,12 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "semantic",
+    "electron-ng2rc4-win32-x64",
+    "typings/*",
+    "typings/globals/**"
+  ]
 }
