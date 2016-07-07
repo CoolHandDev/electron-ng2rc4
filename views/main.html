@@ -10,12 +10,10 @@
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
     <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
     <script src="../semantic/dist/semantic.min.js"></script>
+
     <script>
         //const {ipcRenderer} = require('electron');
         System.set('electron', System.newModule(require('electron')));
-    </script>
-
-    <script>
         System.config({
             map: {
                 '@angular': '../node_modules/@angular',

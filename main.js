@@ -1,9 +1,9 @@
 'use strict';
 
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-const {ipcMain} = require('electron');
+const {electron, app, BrowserWindow, ipcMain} = require('electron');
+//const app = electron.app;
+//const BrowserWindow = electron.BrowserWindow;
+//const {ipcMain} = require('electron');
 const mongoClient = require('mongodb')
 const url = 'mongodb://localhost:27017/mydatabase';
 
