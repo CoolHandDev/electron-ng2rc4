@@ -16,7 +16,7 @@ import {ipcRenderer} from 'electron';
     directives: [FORM_DIRECTIVES, REACTIVE_FORM_DIRECTIVES]
 })
 export class form1Component {
-    projectForm = FormGroup;
+    projectForm: FormGroup;
     projectModel = new Project('', '');
     /*name: AbstractControl;
     type: AbstractControl;*/
