@@ -20,6 +20,9 @@ app.on('ready', function() {
     mainWindow.maximize();
     mainWindow.loadURL(`file://${__dirname}/views/main.html`);
 
+    //get location of cache.  need to clear it every now and then so changes are reflected.
+    //console.log(app.getPath('userData'));
+
     //mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {

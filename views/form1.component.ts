@@ -51,4 +51,9 @@ export class form1Component {
     connectToMongoDB(event) {
         ipcRenderer.send('connectToMongo');
     }
+
+    openSideNav(event) {
+        console.log('side nav button pressed');
+        jQuery('.ui.sidebar').sidebar('toggle');
+    }
 }
