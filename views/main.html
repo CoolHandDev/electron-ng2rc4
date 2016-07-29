@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Electron using NG2 Release Candidate 4</title>
+    <script>
+        /*
+         :BEGIN module vs window workaround
+         Some libraries, like jQuery, auto-detects module systems and load themselves as such.  This means
+         they will not be loaded to the window.  The Electron renderer process, because of integration with Node
+         uses the module system.  We can turn this off to make normal importing of 3rd party libraries work.  However,
+         if we want to use the features of Node in the renderer process, we need a way to prevent the 3rd party
+         libraries from loading as modules.
+
+         This workaround temporarily relocates the module from global to the window object and allows scripts to
+         be loaded in the window.  Make sure to place it before all the script tags that loads the 3rd party libraries.
+
+         Reference:
+         https://github.com/electron/electron/issues/254#issuecomment-183483641
+         http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined
+         */
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
     <script src="../node_modules/core-js/client/shim.min.js"></script>
     <script src="../node_modules/zone.js/dist/zone.js"></script>
     <script src="../node_modules/reflect-metadata/Reflect.js"></script>
@@ -12,6 +33,13 @@
     <script>var jQuery = require('jquery');</script>
     <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
     <script src="../semantic/dist/semantic.js"></script>
+    <script>
+        /*
+         :END module vs window workaround
+         Now that scripts have loaded, return the module back to global.
+         */
+        if (window.module) module = window.module;
+    </script>
 
     <script>
         //const {ipcRenderer} = require('electron');
@@ -78,6 +106,7 @@
         });
         System.import('./main').then(null, console.error.bind(console));
     </script>
+
 </head>
 <body>
     <main-app>Loading...</main-app>
