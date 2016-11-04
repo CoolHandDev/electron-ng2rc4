@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts"/>
+
 import {Component} from '@angular/core';
 import {Project} from '../models/project';
 import {
@@ -54,6 +56,7 @@ export class form1Component {
 
     openSideNav(event) {
         console.log('side nav button pressed');
-        jQuery('.ui.sidebar').sidebar('toggle');
+        //$('.ui.sidebar').sidebar('toggle');
+        $('.ui.sidebar')['sidebar']('toggle');
     }
 }
